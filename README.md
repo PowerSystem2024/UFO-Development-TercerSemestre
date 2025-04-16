@@ -1,1 +1,19 @@
-# UFO-Development-TercerSemestre
+=======
+# UFO-Development
+Grupo N°14 de la Tecnicatura en Programacion UTN San Rafael Mendoza
+
+Miembros:
+BENITEZ DARIO SEBASTIAN
+
+FACHINOTTI PABLO DARIO 11.071
+
+GOMEZ JOSE HIPOLITO
+
+HERRERA VALENTIN
+
+LOPEZ ROBERTO JOSE 11.129
+
+NOBLEGA VICTOR
+
+NUÑEZ GALLARDO GIMENA SOLEDAD 11.180
+
