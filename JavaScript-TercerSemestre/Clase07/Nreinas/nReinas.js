@@ -1,4 +1,4 @@
-const N = 8; // Puedes cambiar este valor a 9, 10, etc.
+const N = 8;
 
 let tablero = Array.from({ length: N }, () => Array(N).fill('.'));
 let soluciones = [];
