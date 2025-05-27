@@ -1,0 +1,43 @@
+El algoritmo de salto del caballo, también conocido como tour del caballo, 
+busca encontrar una secuencia de movimientos de un caballo de ajedrez que visite
+cada casilla de un tablero de ajedrez exactamente una vez.  *Este algoritmo utiliza 
+la técnica de backtracking, lo que significa que si un camino no lleva a una solución, 
+el algoritmo "retrocede" y explora otros caminos.*
+
+En un tablero de ajedrez de n x n casillas, se tiene un caballo situado en la posición inicial de
+coordenadas ( x = 0, y = 0  hablando de lo que es eje cartesiano ). El problema consiste en 
+encontrar, si es que existe, un camino que  permita al caballo pasar exactamente una vez por 
+cada una de las casillas del tablero, teniendo en cuenta los movimientos (saltos) permitidos a 
+un caballo de ajedrez.
+
+Este caballo debera recorrer 64 casilleros en un tablero normal de ajedrez de 8 x 8.
+
+Este es un ejemplo clásico de un problema que se resuelve con el esquema del arlgoritmo de vuelta 
+atrás. El problema consiste en buscar la secuencia de saltos que tiene que dar el caballo, 
+partiendo de una casilla cualquiera, para pasar por cada una de las casillas del tablero. 
+Se da por supuesto que el tablero está vacio, no hay figuras excepto el caballo. Lo primero 
+que hay que tener en cuenta es que el caballo, desde una casilla, puede realizar hasta 8 
+movimientos:
+
+Los ocho posibles movimientos del caballo se obtienen sumando a la posición actual de este, (x, y) 
+unos desplazamientos relativos, estos son:
+
+d = {(2,1), (1,2), (-1,2), (-2,1), (-2,-1), (-1,-2), (1,-2), (2,-1)} Ejemplo suponiendo que el 
+caballo este en la posición 0, 0
+
+Veamos otro ejemplo, suponiendo que el caballo se encuantra en la casilla 3, 5, los posibles 
+movimientos que puede realizar son:
+
+d = {(5,6), (4,7), (2,7), (1,6), (1,4), (2,3), (4,3), (5,4)}
+
+Luego a tener en cuenta que, no siempre el caballo podrá realizar los ocho movimientos, 
+se debe comprobar que la casilla de destino este dentro del tablero y también que no haya 
+pasado previamente el caballo por esa casilla, En caso de ser posible el movimiento se anota, 
+guardando el número del salto realizado.
+
+¿Qué sucede si se agotan los ocho posibles movimientos sin alcanzar la solución? Se vuelve al 
+movimiento anterior, vuelta atrás, se borra la anotación para ensayar con el siguiente movimiento.
+
+La condición que determina que el problema se ha resuelto está ligada con el objetivo que se 
+persigue, y en este problema es que se haya pasado por las n x n casillas, en definitiva que el
+ caballo haya realizado n al cuadrado -1 (63) saltos.
