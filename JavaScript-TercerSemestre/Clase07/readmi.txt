@@ -1,0 +1,36 @@
+Este código implementa una visualización paso a paso de la solución al problema 
+de las N reinas (en este caso, 8 reinas) utilizando JavaScript y manipulación
+ del DOM. 
+El objetivo es colocar 8 reinas en un tablero de ajedrez de 8x8 de manera que 
+ninguna se ataque entre sí, es decir, que no compartan fila, columna ni diagonal.
+
+
+Primero, se definen algunas constantes y variables: N indica el tamaño del tablero
+(8), reinas es un arreglo que almacena la posición de cada reina en cada fila 
+(inicialmente todas en -1, lo que significa que no hay reina colocada), 
+y tiempoDeEspera controla el tiempo de espera entre cada paso de la animación. 
+La función esperar simplemente retorna una promesa que se resuelve después de un 
+tiempo dado, permitiendo pausar la ejecución para visualizar el proceso.
+
+La función sePuedePoner verifica si es seguro colocar una reina en una posición 
+específica. Para cada fila anterior, comprueba si ya hay una reina en la misma
+ columna o en la misma diagonal (usando la diferencia absoluta entre filas y 
+ columnas). Si encuentra un conflicto, retorna false; si no, retorna true.
+
+La función principal, ponerReinasPasoAPaso, utiliza recursión y backtracking
+ para intentar colocar una reina en cada fila. Si logra colocar una reina en
+  la última fila (fila === N), muestra la solución final. En cada intento,
+   si es posible colocar una reina, actualiza el tablero visualmente, 
+   espera un momento, y continúa con la siguiente fila. Si no es posible 
+   avanzar, realiza "backtracking": quita la reina y vuelve a intentar con 
+   otra columna.
+
+La función mostrarTablero se encarga de dibujar el tablero y las reinas 
+en el DOM, usando elementos <div> para cada casilla y aplicando clases 
+CSS para los colores y la reina. Finalmente, mostrarArreglo muestra la 
+solución final como un arreglo de posiciones en el DOM. El proceso comienza 
+automáticamente al cargar la página llamando a ponerReinasPasoAPaso(0).
+
+En resumen, este código no solo resuelve el problema de las N reinas,
+ sino que también lo visualiza paso a paso, facilitando la comprensión
+  del algoritmo de backtracking.

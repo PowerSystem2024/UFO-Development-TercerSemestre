@@ -37,7 +37,7 @@
   }
   
   button {
-    background-color: #1e90ff;
+    background-color: #0c9aec;
     border: none;
     padding: 15px 25px;
     border-radius: 10px;
@@ -48,7 +48,7 @@
   }
   
   button:hover {
-    background-color: #4682b4;
+    background-color: #d60d2e;
   }
   
   #resultado {
@@ -64,10 +64,10 @@
   
   #reiniciar {
     margin-top: 30px;
-    background-color: #dc3545;
+    background-color: #159ae7;
   }
   
   #reiniciar:hover {
-    background-color: #a71d2a;
+    background-color: #d81629;
   }
   
