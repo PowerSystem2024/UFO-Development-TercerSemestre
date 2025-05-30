@@ -57,3 +57,5 @@ if __name__ == '__main__':
     persona1 = Persona(id_persona= 1)
     log.debug(persona1)
 
+    # Comentario hasta q llegue 30/05
+
