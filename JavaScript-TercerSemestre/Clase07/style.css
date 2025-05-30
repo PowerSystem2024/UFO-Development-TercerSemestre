@@ -1,0 +1,26 @@
+.tablero {
+  display: grid;
+  margin: 20px auto;
+  gap: 2px;
+}
+
+.casilla {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.blanca {
+  background-color: #f0d9b5;
+}
+
+.negra {
+  background-color: #b58863;
+}
+
+.reina {
+  color: red;
+}

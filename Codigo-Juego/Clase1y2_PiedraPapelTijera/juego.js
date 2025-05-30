@@ -29,6 +29,7 @@ function obtenerEleccionComputadora() {
     return 'tijeras';
 }
 
+
 // Función principal del juego: se ejecuta cuando el jugador hace una elección
 function jugar(eleccionJugador) {
     // La computadora hace su elección llamando a la función 'obtenerEleccionComputadora'
@@ -48,15 +49,16 @@ function jugar(eleccionJugador) {
         (eleccionJugador === 'tijeras' && eleccionComputadora === 'papel')    // Tijeras gana a papel
     ) {
         // Si el jugador gana, incrementamos su puntaje y mostramos el mensaje de victoria
-        elementoResultado.innerHTML += '¡Ganaste! 🎉';
+        elementoResultado.innerHTML += '¡Ganaste!  😁';
         puntosJugador++; // Aumentamos el puntaje del jugador
         elementoPuntosJugador.textContent = puntosJugador; // Actualizamos el puntaje en la página
     } else {
         // Si el jugador pierde, incrementamos el puntaje de la computadora y mostramos el mensaje de derrota
-        elementoResultado.innerHTML += '¡Perdiste! 🦾';
+        elementoResultado.innerHTML += '¡Perdiste! 😢';
         puntosComputadora++; // Aumentamos el puntaje de la computadora
         elementoPuntosComputadora.textContent = puntosComputadora; // Actualizamos el puntaje de la computadora en la página
     }
+    
 }
 
 // Función para reiniciar el juego: se ejecuta cuando el jugador hace clic en "Reiniciar"
@@ -71,4 +73,5 @@ function reiniciarJuego() {
 
     // Reiniciamos el mensaje de resultado
     elementoResultado.textContent = 'Esperando tu elección...';
+  
 }

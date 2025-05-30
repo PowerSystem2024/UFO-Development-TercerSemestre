@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido del Caballo con Backtracking Visual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        #board-container {
+            margin-top: 20px;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            transition: background-color 0.1s ease, box-shadow 0.1s ease; /* Transición más rápida */
+            color: #333; /* Color de texto por defecto */
+        }
+        tr:nth-child(odd) td:nth-child(even),
+        tr:nth-child(even) td:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+        .start-cell {
+            background-color: #aaffaa !important; /* Verde claro para el inicio */
+        }
+        .visited-cell {
+            background-color: #add8e6; /* Azul claro para celdas visitadas */
+        }
+        .current-step {
+            background-color: #ffeb3b !important; /* Amarillo brillante para el paso actual */
+            box-shadow: 0 0 10px #ffeb3b;
+        }
+        .backtracking-cell {
+            background-color: #ffcccb !important; /* Rojo claro para celdas de backtracking */
+            box-shadow: 0 0 10px #ffcccb;
+        }
+        .solution-cell {
+            background-color: #90ee90; /* Verde más oscuro para la solución final */
+            color: #006400; /* Color de texto más oscuro */
+        }
+        .message-box {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .solution-found {
+            color: green;
+            border: 1px solid green;
+            background-color: #e6ffe6;
+        }
+        .no-solution {
+            color: red;
+            border: 1px solid red;
+            background-color: #ffe6e6;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algoritmo del Salto del Caballo con Visualización de Backtracking</h1>
+    <p>Grupo: UFO-Development</p>
+    <p>Profesor: Ariel Betancud</p>
+    <p>Fecha: 26 de mayo de 2025</p>
+
+    <div id="board-container"></div>
+    <div id="message" class="message-box">Haz clic en Iniciar para ver el recorrido.</div>
+    <button id="startButton">Iniciar Recorrido</button>
+
+    <script src="tourdelcaballo.js"></script>
+</body>
+</html>
