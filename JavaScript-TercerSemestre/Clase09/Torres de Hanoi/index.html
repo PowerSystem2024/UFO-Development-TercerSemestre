@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres de Hanói</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            background-color: #e0f2f7; /* Un fondo más suave */
+            overflow: hidden;
+        }
+        h1 {
+            color: #263238;
+            margin-bottom: 30px;
+        }
+
+        .controls {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 17px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Verde más amigable */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button:hover:not(:disabled) {
+            background-color: #43A047;
+            transform: translateY(-1px);
+        }
+        button:active:not(:disabled) {
+            transform: translateY(1px);
+        }
+        button:disabled {
+            background-color: #bdbdbd;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #a7d9e7;
+            border-radius: 5px;
+            width: 70px;
+            text-align: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+        }
+        label {
+            font-size: 1.15em;
+            color: #455A64;
+            font-weight: 500;
+        }
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        input[type="range"] {
+            width: 120px;
+            cursor: pointer;
+        }
+
+        /* Contenedor principal del juego */
+        .game-area {
+            position: relative;
+            display: flex; /* Ahora las varillas se organizan con flexbox */
+            justify-content: space-around;
+            align-items: flex-end; /* Alinea las varillas y la base */
+            width: 90%;
+            max-width: 960px; /* Un poco más de ancho */
+            height: 350px; /* Más altura para más discos */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            padding-bottom: 20px; /* Espacio para la base común */
+            box-sizing: border-box;
+            border-bottom: 10px solid #424242; /* Base común para todas las varillas */
+        }
+
+        .peg-wrapper { /* Un contenedor para cada varilla (base + poste) */
+            position: relative;
+            width: 30%; /* Para que ocupen un tercio del espacio */
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Centra el poste en su base */
+            align-items: flex-end; /* Alinea el poste con la base común */
+        }
+
+        .peg-rod { /* El poste vertical de la varilla */
+            position: absolute;
+            bottom: 10px; /* Encima de la base común del game-area */
+            width: 12px; /* Un poco más grueso */
+            height: calc(100% - 30px); /* Ajustar altura para que no salga del game-area */
+            background-color: #616161; /* Color del poste */
+            border-radius: 5px;
+        }
+
+        /* Estilos de los discos */
+        .disk {
+            height: 28px; /* Un poco más de altura */
+            border: 1px solid #333;
+            border-radius: 4px;
+            position: absolute; /* Crucial: Posicionamiento absoluto dentro de .game-area */
+            left: 0; /* Se establecerá dinámicamente */
+            bottom: 0; /* Se establecerá dinámicamente */
+            /* La transición se aplica a left y bottom */
+            transition: left var(--animation-speed) ease-in-out,
+                        bottom var(--animation-speed) ease-in-out;
+            box-sizing: border-box;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+        }
+        /* Colores distintivos para los discos */
+        .disk.disk-1 { background-color: #8BC34A; width: 60px; }
+        .disk.disk-2 { background-color: #FFEB3B; width: 80px; }
+        .disk.disk-3 { background-color: #FF9800; width: 100px; }
+        .disk.disk-4 { background-color: #FF5722; width: 120px; }
+        .disk.disk-5 { background-color: #F44336; width: 140px; }
+        .disk.disk-6 { background-color: #E91E63; width: 160px; }
+        .disk.disk-7 { background-color: #9C27B0; width: 180px; }
+        .disk.disk-8 { background-color: #673AB7; width: 200px; }
+        .disk.disk-9 { background-color: #3F51B5; width: 220px; }
+        .disk.disk-10 { background-color: #2196F3; width: 240px; }
+
+
+        #message {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #3F51B5;
+            min-height: 2em;
+            font-weight: 600;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Torres de Hanói</h1>
+
+    <div class="controls">
+        <label for="numDisks">Discos:</label>
+        <input type="number" id="numDisks" value="3" min="1" max="10">
+
+        <div class="speed-control">
+            <label for="speedRange">Velocidad:</label>
+            <input type="range" id="speedRange" min="100" max="2000" value="500" step="50">
+        </div>
+
+        <button id="resetButton">Reiniciar</button>
+        <button id="solveButton">Resolver</button>
+    </div>
+
+    <div class="game-area">
+        <div class="peg-wrapper"><div id="pegA-visual" class="peg-rod"></div></div>
+        <div class="peg-wrapper"><div id="pegB-visual" class="peg-rod"></div></div>
+        <div class="peg-wrapper"><div id="pegC-visual" class="peg-rod"></div></div>
+        </div>
+
+    <p id="message"></p>
+
+    <script src="hanoi.js"></script>
+</body>
+</html>
