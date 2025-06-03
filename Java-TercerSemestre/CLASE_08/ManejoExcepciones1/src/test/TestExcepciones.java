@@ -1,4 +1,6 @@
+
 package excepciones;// Define el paquete donde se encuentra esta clase
+
 
 public class TestExcepciones {
     public static void main(String[] args) {
