@@ -5,12 +5,41 @@
     <title>LA LEYENDA DE AANG: AVATAR</title>
     <!-- Este script es para enlazar el archivo de javascript, colocarlo aca no es de buena practica pero lo hacemos XD -->
     <script src="./js/avatar.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-
 </head> <!-- ← Este cierre es lo único que faltaba -->
 <body>
-<div class="contenedor-juego">
-  <!-- Aquí va tu contenido del juego -->
+    <div id="botones-regla-jugar">
+
+        <div>
+            <button type="button" id="reglas">REGLAS DEL JUEGO</button>
+        </div>
+
+       
+    </div>
+
+    <!-- ---------- Reglas -------------------------------->
+    <div id="contenedor-reglas">
+
+        <section id="reglas-juego">
+            <h2>Reglas del juego</h2>
+            <p>1. Se debe elegir un personaje</p>
+            
+            <p>2. Una vez seleccionado tu personaje selecciona los 3 tipos de ataques disponibles</p>
+            
+            <h2>Reglamento de golpes:</h2>
+            <li>Puño le gana a Barrida</li>
+            <li>Patada le gana a Puño</li>
+            <li>Barrida le gana a Barrida</li>
+        </section>
+
+
+        <div id="volver">
+
+            <button type="button" id="volver-inicio"><p>VOLVER AL INICIO</p></button>
+        </div>
+
+    </div>
+
+
 
     <h1>AVATAR  🔥 💧 🌱 🌪️ </h1>  <!-- ESTO ES ESTATICO, NO CAMBIA, EL H1 UTLIZADO  -->
     <section id="seleccionar-personaje">
@@ -47,12 +76,11 @@
     </section>
 
     <section id="mensajes">
-        <p>🎆🎆 Que comience el juego 🎆🎆</p>
+       
     </section>
 
     <section id="reiniciar">
         <button id="boton-reiniciar">Reiniciar</button>
     </section>
-</div>
 </body>
 </html>
