@@ -1,0 +1,68 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #d9e4f5, #f6fafd);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-juego {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.seccion-personajes,
+.seccion-ataques {
+  margin-bottom: 25px;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#mensajes {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  font-size: 14px;
+}
+
+#mensajes p {
+  margin-bottom: 10px;
+}

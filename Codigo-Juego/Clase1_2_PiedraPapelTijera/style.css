@@ -1,0 +1,101 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Fondo mejorado */
+  background-image: url('fondo.png');
+  background-size: cover;             
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;       
+
+  /* Overlay oscuro semi-transparente para mejorar la legibilidad del texto blanco */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con 60% de opacidad */
+  background-blend-mode: multiply;    /* Mezcla el color de fondo con la imagen de fondo */
+
+  color: rgb(255, 255, 255);          /* Texto blanco para que se vea sobre el fondo oscuro */
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; /* Añadimos un poco de padding general para que el contenido no esté pegado a los bordes */
+}
+
+h1 {
+  font-size: 2.8rem; /* Un poco más grande para destacar */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para que se vea mejor */
+}
+
+p {
+  margin-bottom: 35px;
+  font-size: 1.3rem; /* Un poco más grande */
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para el párrafo también */
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px; /* Más espacio */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background-color: #0c9aec;
+  border: none;
+  padding: 15px 30px; /* Un poco más de padding para que sean más grandes */
+  border-radius: 10px;
+  color: rgb(255, 255, 255); /* Texto del botón blanco para contraste */
+  font-size: 1.2rem; /* Texto más grande en los botones */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Añadimos una transición para el transform */
+}
+
+button:hover {
+  background-color: #d60d2e;
+  transform: translateY(-3px); /* Un pequeño efecto al pasar el mouse */
+}
+
+#resultado {
+  margin-top: 25px;
+  font-size: 1.5rem; /* Un poco más grande y legible */
+  text-align: center;
+  font-weight: bold; /* Para que resalte más */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#puntuacion {
+  margin-top: 25px;
+  font-size: 1.3rem; /* Más grande */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#reiniciar {
+  margin: 40px auto 0; /* Más margen arriba */
+  background-color: #159ae7;
+  padding: 10px 20px; /* Tamaño un poco más grande */
+  font-size: 1rem;
+  border-radius: 8px; /* Bordes un poco más suaves */
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Más espacio entre ícono y texto */
+  color: rgb(255, 255, 255); /* Texto blanco para el botón de reiniciar también */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reiniciar:hover {
+  background-color: #d81629;
+  transform: translateY(-3px);
+}
