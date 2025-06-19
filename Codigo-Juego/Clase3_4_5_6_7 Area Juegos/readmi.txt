@@ -252,7 +252,59 @@ Este proyecto me ayudó a repasar:
 - Funciones
 - Buenas prácticas en programación
 
+# 🥋 Juego de Combate de Personajes ⚔️
 
+Este es un juego de combate simple desarrollado en JavaScript, HTML y CSS. Los jugadores seleccionan un personaje y luego se enfrentan a un oponente controlado por la computadora en un combate por turnos, utilizando diferentes tipos de ataques. El objetivo es reducir las vidas del oponente a cero antes de que él reduzca las tuyas.
+
+## 🚀 Cómo Jugar
+
+1.  **Iniciar el Juego:** Al cargar la página, verás dos botones iniciales: "Ver Reglas" y "Jugar".
+2.  **Ver Reglas (Opcional):** Si quieres revisar las reglas del juego, haz clic en "Ver Reglas". Podrás regresar al inicio haciendo clic en "Volver al Inicio".
+3.  **Seleccionar Personaje:** Haz clic en "Jugar". Luego, elige tu personaje favorito de la lista disponible (Zuko, Katara, Aang, Toph, Sokka) y haz clic en el botón "Seleccionar Personaje".
+4.  **Atacar:** Una vez que hayas seleccionado tu personaje, se te presentarán tres opciones de ataque:
+    * **Puño 👊**
+    * **Patada 🦵**
+    * **Barrida 🧹**
+    * Elige tu ataque para cada ronda.
+5.  **Combate:** Cada vez que ataques, la computadora elegirá un ataque aleatorio. El juego determinará el ganador de la ronda basándose en las reglas de combate (por ejemplo, Puño vence a Barrida, Patada vence a Puño, Barrida vence a Patada).
+6.  **Vidas:** Ambos jugadores comienzan con 3 vidas. Cada vez que pierdes una ronda, pierdes una vida.
+7.  **Fin del Juego:** El juego termina cuando uno de los personajes se queda sin vidas. Se mostrará un mensaje indicando si ganaste o perdiste.
+8.  **Reiniciar:** Después de que el juego termine, aparecerá un botón "Reiniciar" que te permitirá comenzar una nueva partida.
+
+## ⚙️ Estructura del Código (Para Desarrolladores)
+
+El juego está organizado en varias funciones JavaScript, cada una con una responsabilidad específica:
+
+* **`iniciarJuego()`:** Función principal que se ejecuta al cargar la página. Inicializa el estado del juego, oculta/muestra secciones y asigna los event listeners a los botones principales.
+* **`botonVerReglas()` / `verReglas()` / `volverInicio()`:** Gestionan la visualización de las reglas del juego.
+* **`seleccionarPersonajeJugador()`:** Maneja la selección del personaje del jugador y muestra el ataque.
+* **`seleccionarPersonajecomputadora()`:** Asigna un personaje aleatorio para el enemigo.
+* **`ataquePunio()`, `ataquePatada()`, `ataqueBarrida()`:** Funciones que se ejecutan cuando el jugador selecciona un ataque. Establecen el ataque del jugador y llaman a la lógica del enemigo y el combate.
+* **`aleatorio()`:** Función auxiliar para generar números aleatorios dentro de un rango.
+* **`ataqueAleatorioEnemigo()`:** Determina el ataque de la computadora de forma aleatoria.
+* **`combate()`:** Contiene la lógica central del juego, compara los ataques de ambos jugadores, actualiza las vidas y muestra el resultado de cada ronda.
+* **`crearMensaje()`:** Muestra los resultados de cada ronda en la sección de mensajes.
+* **`revisarFinDelJuego()`:** Verifica si algún jugador se ha quedado sin vidas y declara un ganador o perdedor.
+* **`mostrarMensajeFinal()`:** Muestra el mensaje final del juego.
+* **`deshabilitarBotonesAtaque()`:** Deshabilita los botones de ataque una vez que el juego ha terminado.
+* **`reiniciarJuego()`:** Recarga la página para empezar una nueva partida.
+
+## 🛠️ Tecnologías Utilizadas
+
+* **HTML5:** Para la estructura y contenido del juego.
+* **CSS3:** Para el estilo y diseño visual.
+* **JavaScript (ES6+):** Para la lógica del juego y la interactividad.
+
+## 🚀 Ejecución
+
+Para ejecutar este juego localmente:
+
+1.  Clona o descarga el repositorio.
+2.  Abre el archivo `index.html` (o el nombre de tu archivo HTML principal) en tu navegador web.
+
+---
+
+¡Espero que disfrutes de este sencillo juego!
 
 function crearMensaje(){
     let seccionMensajes = document.getElementById('mensajes')
