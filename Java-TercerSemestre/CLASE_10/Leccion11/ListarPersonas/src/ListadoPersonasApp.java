@@ -33,7 +33,7 @@ public class ListadoPersonasApp {
                 """);
         System.out.print("Digite una de las opciones: ");
 
-    }//Fin del metodo mostrarMenu
+    }//Fin del metodo mostrarMenu.
 
     private static boolean ejecutarOperacion(Scanner entrada, List<Persona> personas){
         var opcion = Integer.parseInt(entrada.nextLine());
