@@ -5,7 +5,7 @@ public class Persona {
     private String email;
     private static int numeroPersonas = 0;
 
-    //Constructor Vacio
+    //Constructor Vacio.
 
     public Persona(){
         this.id = ++Persona.numeroPersonas;
