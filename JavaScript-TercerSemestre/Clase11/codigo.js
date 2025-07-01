@@ -17,3 +17,4 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(`¡Bienvenido, ${user}!`);
     });
 });
+// Gracias a los compañeros de Carpincho por la ayuda
